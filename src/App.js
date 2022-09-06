@@ -1,33 +1,28 @@
 import logo from './logo.svg';
-import {useState} from "react";
-import ReactMarkdown from 'react-markdown'
 import './App.css';
+import Theme from './components/theme';
+import { createContext } from 'react';
+import {useState} from "react";
+import ReactSwitch from "react-switch";
+
+export const ThemeContext=createContext(null);
 
 function App() {
-  const [markdown,setmarkdown]=useState("Hello World!");
+  const [theme,setTheme]=useState("light");
+  const toggleTheme=()=>{
+    setTheme((curr)=>(curr==="light"? "dark":"light"));
+  };
   return (
-    <>
-    <h1 align="center">Markdown Editor</h1>
-
-    <div className="bigcontainer">
-      
-    <div className="left">
-      <textarea className="typehere" value={markdown} onChange={(e)=>setmarkdown(e.target.value)}></textarea>
-    </div>
-
-    <div className="middle">
-      <button id="save">Save</button>
-      <button id="delete">Delete</button>
-      <button id="toggle">Toggle</button>
-    </div>
-
-    <div className="right">
-      <div className="typehereright">
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+    <ThemeContext.Provider value={{theme,setTheme}}>
+      <div className='heading'><h1 align="center">Markdown Editor</h1></div>
+    <div className='App' id={theme}>
+      <div className="switch">
+         <ReactSwitch onChange={toggleTheme} checked={theme==="dark"}/>&nbsp;&nbsp;
+         <div className="text"><i><label>{theme==="light"?"Light Mode":"Dark Mode"}</label></i></div>
       </div>
+      <Theme/>
     </div>
-    </div>
-    </>
+    </ThemeContext.Provider>
   );
 }
 
