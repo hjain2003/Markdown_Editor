@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 *{
-  margin:0px;
-  padding: 0px;
+  margin:0rem;
+  padding: 0rem;
+}
+html{
+  font-size:62.5%;
 }
 .App {
   text-align: center;
@@ -26,7 +29,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10rem + 2vmin);
   color: white;
 }
 
@@ -49,10 +52,10 @@ h1
 }
 @keyframes move
 {
-  0%{transform: translateX(-200px);}
-  25%{transform: translateX(10px);}
-  50%{transform: translateX(-10px);}
-  100%{transform: translateX(5px);}
+  0%{transform: translateX(-20.0rem);}
+  25%{transform: translateX(1.0rem);}
+  50%{transform: translateX(-1.0rem);}
+  100%{transform: translateX(.5rem);}
 }
 .bigcontainer
 {
@@ -63,12 +66,12 @@ h1
 }
 .left,.right
 {
-  height:500px;
-  width:450px;
-  border: 2px solid black;
-  /* padding: 10px; */
-  border-radius: 15px;
-  box-shadow:10px 10px brown;
+  height:50.0rem;
+  width:45.0rem;
+  border: .2rem solid black;
+  /* padding: 10rem; */
+  border-radius: 1.5rem;
+  box-shadow:1.0rem 1.0rem brown;
 }
 .left
 {
@@ -82,25 +85,25 @@ h1
 {
   color: white;
   background-color: rgb(47,213,198);
-  box-shadow:10px 10px rgb(59, 59, 148);
+  box-shadow:1.0rem 1.0rem rgb(59, 59, 148);
   animation: changeit 0.8s ease-in-out forwards;
   animation:dabba 0.8s ease-in-out forwards;
 }
 @keyframes changeit
 {
-  0%{box-shadow:10px 10px brown;}
+  0%{box-shadow:1.0rem 1.0rem brown;}
 }
 #dark .right
 {
   color: white;
   background-color: rgb(47,213,198);
-  box-shadow:10px 10px rgb(59, 59, 148);
+  box-shadow:1.0rem 1.0rem rgb(59, 59, 148);
   animation: changeit 0.8s ease-in-out forwards;
   animation:dabba 0.8s ease-in-out forwards;
 }
 @keyframes rightleft
 {
-  0%{transform: translateX(150px);}
+  0%{transform: translateX(15.0rem);}
 }
 @keyframes dabba
 {
@@ -112,20 +115,20 @@ h1
   justify-content: center;
   margin:auto;
   align-items: center;
-  height:450px;
-  width:400px; 
+  height:45.0rem;
+  width:40.0rem; 
   border: none;
-  padding: 10px;
-  font-size: 20px;
-  margin-top: 20px;
+  padding: 1.0rem;
+  font-size: 2.0rem;
+  margin-top: 2.0rem;
   outline: none;
-  border-radius :20px;
+  border-radius :2.0rem;
   animation :leftright 0.5s ease-in-out forwards;
   font-family: 'Space Mono', monospace;
 }
 @keyframes leftright
 {
-  0%{transform: translateX(-150px);}
+  0%{transform: translateX(-15.0rem);}
 }
 .typehereright
 {
@@ -135,13 +138,13 @@ h1
   flex-direction: column;
   align-items: left;
   justify-content: left;
-  padding: 10px;
-  padding-top:25px;
-  font-size: 20px;
-  height:450px;
-  width:400px; 
-  border-radius:20px;
-  /* border: 2px solid black; */
+  padding: 1.0rem;
+  padding-top:2.5rem;
+  font-size: 2.0rem;
+  height:45.0rem;
+  width:40.0rem; 
+  border-radius:2.0rem;
+  /* border: 2rem solid black; */
   animation :rightleft 0.5s ease-in-out forwards;
   font-family: 'Space Mono', monospace;
   animation:dabba 0.8s ease-in-out forwards;
@@ -149,7 +152,7 @@ h1
 }
 h1
 {
-  font-size: 30px;
+  font-size: 3.0rem;
 }
 #dark .typehereright
 {
@@ -180,12 +183,12 @@ h1
 
 #save,#delete,#toggle
 {
-  border-radius: 5px;
+  border-radius: 5rem;
   border: none;
-  height:50px;
-  width: 80px;
-  margin-bottom: 10px;
-  font-size: 20px;
+  height:5.0rem;
+  width: 8.0rem;
+  margin-bottom: 1.0rem;
+  font-size: 2.0rem;
   animation: gayab 0.9s ease-in-out forwards;
 }
 @keyframes gayab
@@ -206,7 +209,7 @@ h1
 {
   background-color: rgb(0, 0, 0);
   color: white;
-  /* margin-top:-200px; */
+  /* margin-top:-200rem; */
 }
 #save:hover,#delete:hover,#toggle:hover
 {
@@ -226,13 +229,13 @@ h1
 }
 .text
 {
-  margin-top:10px;
+  margin-top:1.0rem;
   color: red;
 }
 .heading
 {
   background-color: brown;
-  padding: 10px;
+  padding: 1.0rem;
 }
 #dark .heading
 {
@@ -241,7 +244,35 @@ h1
 }
 .switch
 {
-  top: -40px;
-  padding: 10px;
+  top: -4.0rem;
+  padding: 1.0rem;
   transition: 1s;
+}
+@media (max-width:1127px)
+{
+  html
+  {
+    font-size:49%;
+  }
+}
+@media (max-width:832px)
+{
+  html
+  {
+    font-size:40%;
+  }
+}
+@media (max-width:670px)
+{
+  html
+  {
+    font-size:30%;
+  }
+}
+@media (max-width:500px)
+{
+  html
+  {
+    font-size:20%;
+  }
 }
